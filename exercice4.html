@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercice 1 mot de passe</title>
+</head>
+<style>
+    body {
+        background: beige;
+        background-size: cover;
+        margin: 0px;
+    }
+
+    nav {
+        margin: 0;
+        padding: 0;
+    }
+
+    .navL {
+        background-color: white;
+
+    }
+
+    .navD {
+        background-color: black;
+
+    }
+
+    ul {
+        width: fit-content;
+        list-style-type: none;
+        padding: 0;
+        overflow: hidden;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 0px;
+    }
+
+    li {
+        float: left;
+
+    }
+
+
+    li a {
+        display: block;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    .L a {
+        color: black;
+    }
+
+    .D a {
+        color: white;
+    }
+
+    .L a:hover {
+        background-color: beige;
+
+    }
+
+    .D a:hover {
+        background-color: white;
+    }
+
+</style>
+<body>
+<nav class="navL" id="nav">
+    <ul>
+        <li class="li L"><a href="exercice1.html">Exercice 1</a></li>
+        <li class="li L"><a href="exercice2.html">Exercice 2</a></li>
+        <li class="li L"><a href="exercice3.html">Exercice 3</a></li>
+        <li class="li L"><a href="exercice4.html">Exercice 4</a></li>
+        <li class="li L"><a href="exercice5.html">Exercice 5</a></li>
+    </ul>
+</nav>
+
+
+</body>
+</html>
+
+<script>
+
+    let mode = "L";
+
+    let data = [
+        "“Informatique : Alliance d’un science inexacte et d’une activité humaine faillible.”",
+        "“Le principe de l'évolution est beaucoup plus rapide en informatique que chez le bipède.”",
+        "“Quelle prétention de prétendre que l'informatique est récente : Adam et Eve avaient déjà un Apple !”",
+        "“L'informatique, ça fait gagner beaucoup de temps... à condition d'en avoir beaucoup devant soi !”",
+        "“La révolution informatique fait gagner un temps fou aux hommes, mais ils le passent avec leur ordinateur !”",
+        "“Cookie : Anciennement petit gâteau sucré, qu’on acceptait avec plaisir. Aujourd’hui : petit fichier informatique drôlement salé, qu’il faut refuser avec véhémence.”",
+        "“Nous ne pouvons pas prédire où nous conduira la Révolution Informatique. Tout ce que nous savons avec certitude, c’est que, quand on y sera enfin, on n’aura pas assez de RAM.”"
+    ]
+    let div = document.createElement("div");
+    div.style.justifyContent = "center"
+    div.style.marginTop = "10%"
+    document.body.appendChild(div)
+
+
+    let p = document.createElement("p");
+    p.textContent = "cliquez ici pour passer en DarkMode"
+    p.style.color = "black"
+    p.style.border = "1px solid black"
+    p.style.width = "fit-content"
+    p.style.margin = "0 auto 0 auto"
+    p.style.fontSize = "24px"
+    p.style.fontWeight = "bold"
+    p.style.backgroundColor = "white"
+    p.style.padding = "5px"
+    p.className = "popup"
+    div.appendChild(p)
+
+
+    p.addEventListener('click', function () {
+        let change = document.getElementsByClassName("li");
+
+        if (mode === "L") {
+            mode = "D"
+            p.style.color = "white"
+            p.style.backgroundColor = "black"
+            p.style.borderColor = "white"
+            document.body.style.backgroundColor = "black"
+            for (let i = 0; i < change.length; i++) {
+                change[i].classList.remove("L")
+                change[i].classList.add("D")
+            }
+            document.getElementById('nav').classList.remove('navL')
+            document.getElementById('nav').classList.add("navD")
+            p.textContent = "cliquez ici pour passer en LightMode"
+
+        } else {
+            mode = "L"
+            p.style.color = "black"
+            p.style.backgroundColor = "white"
+            p.style.borderColor = "black"
+            document.body.style.backgroundColor = "beige"
+            for (let i = 0; i < change.length; i++) {
+                change[i].classList.remove('D')
+                change[i].classList.add("L")
+            }
+            document.getElementById('nav').classList.remove('navD')
+            document.getElementById('nav').classList.add("navL")
+            p.textContent = "cliquez ici pour passer en DarkMode"
+
+        }
+    })
+
+
+</script>

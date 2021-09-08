@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercice 1 mot de passe</title>
+</head>
+<style>
+    body {
+        background: url("back.png") no-repeat;
+        background-size: cover;
+        margin: 0px;
+    }
+
+    nav {
+        margin: 0;
+        padding: 0;
+        background-color: #333;
+    }
+
+    ul {
+        width: fit-content;
+        list-style-type: none;
+        padding: 0;
+        overflow: hidden;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 0px;
+
+    }
+
+    li {
+        float: left;
+    }
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    /* Change the link color to #111 (black) on hover */
+    li a:hover {
+        background-color: #111;
+    }
+</style>
+<body>
+<nav>
+    <ul>
+        <li><a href="exercice1.html">Exercice 1</a></li>
+        <li><a href="exercice2.html">Exercice 2</a></li>
+        <li><a href="exercice3.html">Exercice 3</a></li>
+        <li><a href="exercice4.html">Exercice 4</a></li>
+        <li><a href="exercice5.html">Exercice 5</a></li>
+
+    </ul>
+</nav>
+
+</body>
+</html>
+
+<script>
+
+
+    let div = document.createElement("div");
+    div.style.justifyContent = "center"
+    div.style.marginTop = "10%"
+    document.body.appendChild(div)
+
+
+    let p = document.createElement("p");
+    p.textContent = "Veuillez saisir une valeur en Celsius ou en Fahrenheit"
+    p.style.color = "black"
+    p.style.border = "1px solid black"
+    p.style.width = "fit-content"
+    p.style.margin = "0 auto 0 auto"
+    p.style.fontSize = "24px"
+    p.style.fontWeight = "bold"
+    p.style.backgroundColor = "aquamarine"
+    p.style.padding = "5px"
+    div.appendChild(p)
+
+    let input = document.createElement("input");
+    input.placeholder = "Veuillez saisir la valeur en Celsius "
+    input.type = "number"
+    input.name = "celsius"
+    input.style.width = "250px"
+    input.style.margin = "0 auto 0 auto"
+
+
+    div.appendChild(input)
+
+
+
+    let input2 = document.createElement("input");
+    input2.placeholder = "Veuillez saisir la valeur en Fahrenheit"
+    input2.type = "number"
+    input2.name = "fahrenheit"
+    input2.style.width = "250px"
+    input2.style.margin = "0 auto 0 auto"
+
+    div.appendChild(input2)
+
+
+    input.addEventListener('keyup', function (evt) {
+        if(this.value.length > 0){
+            console.log(this.value)
+            let res = this.value  * 9/5 + 32
+            input2.value = res.toFixed(2)
+        }
+    });
+
+    input2.addEventListener('keyup', function (evt) {
+        if(this.value.length > 0){
+            let res = (this.value - 32) * 5/9
+            input.value = res.toFixed(2)
+        }
+        console.log(this.value);
+    });
+
+</script>

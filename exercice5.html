@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercice 1 mot de passe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<style>
+    body{
+        background: url("back.png") no-repeat;
+        background-size: cover;
+        margin:0px;
+    }
+    nav {
+        overflow: hidden;
+        background-color: #333;
+        position: relative;
+    }
+
+    ul{
+        list-style-type: none;
+    }
+
+    nav a {
+        color: white;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        display: block;
+    }
+
+    /* Style the hamburger menu */
+    #burger {
+        cursor: pointer;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        background: #886c3d;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    /* Add a grey background color on mouse-over */
+    li a:hover {
+        background-color: beige;
+        color: black;
+    }
+
+</style>
+<body>
+
+
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <ul id="menu" class="show" style="display: none">
+            <li class="li"><a href="exercice1.html">Exercice 1</a></li>
+            <li class="li"><a href="exercice2.html">Exercice 2</a></li>
+            <li class="li"><a href="exercice3.html">Exercice 3</a></li>
+            <li class="li"><a href="exercice4.html">Exercice 4</a></li>
+            <li class="li"><a href="exercice5.html">Exercice 5</a></li>
+        </ul>
+        <div id="burger">
+            <i class="fa fa-bars"></i>
+        </div>
+    </nav>
+
+</body>
+</html>
+
+<script>
+
+       let menu = document.getElementById('menu')
+       let burger = document.getElementById('burger')
+
+
+
+       burger.addEventListener('click',function (){
+           if(menu.className === "show"){
+               menu.className = "hide"
+               menu.style.display = "none";
+           }else{
+               menu.className = "show"
+               menu.style.display = "block";
+
+           }
+       })
+
+</script>

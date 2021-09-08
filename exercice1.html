@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercice 1 mot de passe</title>
+</head>
+<style>
+    body{
+        background: url("back.png") no-repeat;
+        background-size: cover;
+        margin:0px;
+    }
+    nav {
+        margin: 0;
+        padding: 0;
+        background-color: #333;
+    }
+    ul{
+        width: fit-content;
+        list-style-type: none;
+        padding: 0;
+        overflow: hidden;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top:0px;
+
+    }
+
+    li {
+        float: left;
+    }
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    /* Change the link color to #111 (black) on hover */
+    li a:hover {
+        background-color: #111;
+    }
+</style>
+<body>
+<nav>
+    <ul>
+        <li><a href="exercice1.html">Exercice 1</a></li>
+        <li><a href="exercice2.html">Exercice 2</a></li>
+        <li><a href="exercice3.html">Exercice 3</a></li>
+        <li><a href="exercice4.html">Exercice 4</a></li>
+        <li><a href="exercice5.html">Exercice 5</a></li>
+
+    </ul>
+</nav>
+
+</body>
+</html>
+
+<script>
+    let div = document.createElement("div");
+    div.style.justifyContent = "center"
+    div.style.marginTop = "10%"
+    document.body.appendChild(div)
+
+    let p = document.createElement("p");
+    p.textContent = "Veuillez cliquer sur générer un mot de passe"
+    p.style.color = "black"
+    p.style.border = "1px solid black"
+    p.style.width = "fit-content"
+    p.style.margin = "0 auto 0 auto"
+    p.style.fontSize = "24px"
+    p.style.fontWeight = "bold"
+    p.style.backgroundColor = "aquamarine"
+    p.style.padding = "5px"
+    div.appendChild(p)
+
+
+
+    let div2 = document.createElement("div");
+    div.appendChild(div2)
+
+    let button =  document.createElement("button");
+    button.textContent =  "Générer un mot de passe"
+    button.style.margin = "0 auto 0 auto"
+    button.style.backgroundColor = "#17a2b8"
+    div2.appendChild(button)
+
+    button.addEventListener("click", function() {
+        const characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ()[]@.*/&+-,;:!?<>abcdefghijklmnopqrstuvwxyz0123456789';
+        const min = "abcdefghijklmnopqrstuvwxyz"
+        const maj = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+        let password = ""
+        console.log(password,Math.random())
+
+        while(password.length < 4){
+            password += Math.floor(Math.random()*10)
+        }
+        while(password.length < 8){
+            password += min[Math.floor(Math.random()*25)]
+        }
+        while(password.length < 12){
+            password += maj[Math.floor(Math.random()*25)]
+        }
+        while(password.length < 18){
+            password += characters[Math.floor(Math.random()*characters.length)]
+        }
+        console.log(password)
+        p.innerHTML = password;
+    })
+
+
+
+</script>
